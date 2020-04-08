@@ -11,7 +11,7 @@ import urllib.request
 class MemesSpider(scrapy.Spider):
     save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
     # 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
-    name = "memes"
+    name = "templates"
     memes = dict()
 
     def get_template_urls(self):
@@ -99,5 +99,5 @@ class MemesSpider(scrapy.Spider):
         # self.log(meme)
         # Fix from https://stackoverflow.com/questions/34957748/http-error-403-forbidden-with-urlretrieve
         opener = urllib.request.URLopener()
-        opener.addheader('User-Agent', 'meme-crawler')
+        opener.addheader('User-Agent', 'meme-templates-crawler')
         opener.retrieve(url, img_path)
