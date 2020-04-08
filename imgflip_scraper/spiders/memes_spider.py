@@ -1,19 +1,22 @@
+from pathlib import Path
 import json
 import scrapy
 import csv
 import string
 import os
-import shutil
 from functools import reduce
 import urllib.request
 
 
 class MemesSpider(scrapy.Spider):
+    save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
+    # 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
     name = "memes"
     memes = dict()
 
     def get_template_urls(self):
-        csv_filename = 'popular_100_memes.csv'
+        csv_filename = reduce(os.path.join, [self.save_path, "dataset", 'popular_100_memes.csv'])
+        Path(os.path.dirname(csv_filename)).mkdir(mode=0o655, parents=True, exist_ok=True)
         with open(csv_filename) as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
             line = 0
@@ -80,27 +83,21 @@ class MemesSpider(scrapy.Spider):
 
     def save_memes(self):
         for key, meme in self.memes.items():
-            save_path = 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
             filename = '%s.json' % key
-            complete_name = os.path.join(save_path, filename)
-            with open(complete_name, 'w+') as file:
-                url = meme['template_url']
+            path = reduce(os.path.join, [self.save_path, "dataset", "templates", filename])
+            Path(os.path.dirname(path)).mkdir(mode=0o655, parents=True, exist_ok=True)
+            with open(path, 'w+') as file:
                 json.dump(meme, file, indent=2)
-                # snapshot of the image in folder
-                img_path = reduce(os.path.join, [save_path, "img", url.split('/')[-1]])
-                self.log(meme)
-                # r = requests.get(url, stream=True)
-                # if r.status_code == 200:
-                #     with open(img_path, 'wb') as f:
-                #         r.raw.decode_content = True
-                #         shutil.copyfileobj(r.raw, f)
+                self.save_template_img(meme)
 
-                # resource = urllib.request.urlopen(meme['template_url'])
-                # output = open(img_name, "wb")
-                # output.write(resource.read())
-                # output.close()
-                # Fix from https://stackoverflow.com/questions/34957748/http-error-403-forbidden-with-urlretrieve
-                opener = urllib.request.URLopener()
-                opener.addheader('User-Agent', 'meme-crawler')
-                opener.retrieve(url, img_path)
-                # urllib.request.urlretrieve(url, img_path)
+    def save_template_img(self, meme):
+        url = meme['template_url']
+
+        img_path = reduce(os.path.join, [self.save_path, "dataset", "templates", "img", url.split('/')[-1]])
+        self.log(img_path)
+        Path(os.path.dirname(img_path)).mkdir(mode=0o655, parents=True, exist_ok=True)
+        # self.log(meme)
+        # Fix from https://stackoverflow.com/questions/34957748/http-error-403-forbidden-with-urlretrieve
+        opener = urllib.request.URLopener()
+        opener.addheader('User-Agent', 'meme-crawler')
+        opener.retrieve(url, img_path)

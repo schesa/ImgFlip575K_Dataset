@@ -1,9 +1,13 @@
 import scrapy
 import csv
+from pathlib import Path
+from functools import reduce
+import os
 
 
 class GenerateSpider(scrapy.Spider):
     name = "popular-memes"
+    save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
 
     def start_requests(self):
         urls = [
@@ -31,7 +35,8 @@ class GenerateSpider(scrapy.Spider):
         # ['ID', 'Name', 'Alternate Text']
         fieldnames = response.css('#page table tr th::text').extract()
 
-        filename = 'popular_100_memes.csv'
+        filename = reduce(os.path.join, [self.save_path, "dataset", 'popular_100_memes.csv'])
+        Path(os.path.dirname(filename)).mkdir(mode=0o655, parents=True, exist_ok=True)
 
         with open(filename, 'w', newline='') as file:
             self.log('Created File %s' % filename)
