@@ -1,6 +1,6 @@
 Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)**
 
-A bigger version of **[Imgflip top 24 memes]https://www.kaggle.com/dylanwenzlau/imgflip-meme-text-samples-for-top-24-memes**
+A bigger version of **[Imgflip top 24 memes](https://www.kaggle.com/dylanwenzlau/imgflip-meme-text-samples-for-top-24-memes)**
 
 Total memes - **574701**
 
