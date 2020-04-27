@@ -15,4 +15,4 @@ Top 100 popular memes - ./dataset/popular_100_memes.csv
 
 Change dir to project and run script:
 
-> run.sh
+``` run.sh ```
