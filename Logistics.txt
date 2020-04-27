@@ -1,0 +1,22 @@
+Personal calculations, final decision: do not save images, only captions
+
+Popular memes - 100 images
+Popular memes - 100 .json
+
+Template dataset: 5 MB
+Biggest img : 287 KB
+
+
+Most popular meme: 
+Distracted Boyfriend 16,500 samples (1,100 pages X 15 memes/page)
+Max total: 158 GB (16,500 X 96KB X 100)
+
+Most Smallest size meme:
+Look At Me 750 samples (50 pages X 15 memes/page)
+Max total: 0.52 GB (750 X 7KB X 100)
+
+Middle Meme:
+Too Damn High 4,996 samples (333 pages X 15 memes/page)
+Max total: 7GB GB (4,996 X 14KB X 100)
+
+DataSet size = min 0.5 GB - middle 7 GB - max 158 GB
