@@ -9,9 +9,7 @@ import urllib.request
 
 
 class TemplatesSpider(scrapy.Spider):
-    # save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
-    save_path = reduce(os.path.join, ['E:' + os.sep, 'schesa', 'imgflip_scraper'])
-    # 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
+    save_path = os.getcwd()
     name = "templates"
     memes = dict()
 

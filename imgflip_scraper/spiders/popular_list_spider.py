@@ -7,8 +7,7 @@ import os
 
 class GenerateSpider(scrapy.Spider):
     name = "popular-memes"
-    # save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
-    save_path = reduce(os.path.join, ['E:' + os.sep, 'schesa', 'imgflip_scraper'])
+    save_path = os.getcwd()
 
     def start_requests(self):
         urls = [

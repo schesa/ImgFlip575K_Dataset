@@ -1,5 +1,4 @@
 from pathlib import Path
-import json
 import scrapy
 import csv
 import string
@@ -11,9 +10,7 @@ import json
 
 
 class MemesSpider(scrapy.Spider):
-    save_path = reduce(os.path.join, ['E:' + os.sep, 'schesa', 'imgflip_scraper'])
-    # 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
-    # 'E:/schesa/imgflip_scraper/dataset/templates'
+    save_path = os.getcwd()
     name = "memes"
     template_ids = dict()
     memes = defaultdict(list)
@@ -45,8 +42,6 @@ class MemesSpider(scrapy.Spider):
             if i > 1:
                 yield scrapy.Request(url=url, callback=self.parse)
 
-            # yield scrapy.Request(url=url.replace('memetemplate', 'memegenerator', 1), callback=self.parse_generator)
-
     def parse(self, response):
         page = response.url.split("/")[-1].split('?')[0]
         id = self.template_ids[page]
@@ -63,7 +58,6 @@ class MemesSpider(scrapy.Spider):
             return
 
     def parse_meme(self, response):
-        # self.log('parse_meme')
         if response.css('.img-added-imgs-msg'):
             return
         title = response.css('#img-secondary .recaption::attr(href)').extract()[0].split('/')[-1]
@@ -89,11 +83,6 @@ class MemesSpider(scrapy.Spider):
             self.memes[title].append(meme)
         except:
             self.log('Empty meme')
-        # self.log(meme)
-        # self.log(response.url)
-
-    # def __del__(self):
-    #     self.save_memes()
 
     def save_memes(self):
         for meme_name, lst in self.memes.items():
@@ -105,7 +94,6 @@ class MemesSpider(scrapy.Spider):
 
             with open(path, 'w+') as file:
                 json.dump(lst, file, indent=2)
-                # self.log(json.dumps(dict(self.memes), indent=2))
 
     def save_meme(self, meme_name):
         lst = self.memes[meme_name]
@@ -117,5 +105,4 @@ class MemesSpider(scrapy.Spider):
 
         with open(path, 'w+') as file:
             json.dump(lst, file, indent=2)
-            # self.log(json.dumps(dict(self.memes), indent=2))
         del self.memes[meme_name]
