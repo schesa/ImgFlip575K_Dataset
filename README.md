@@ -16,5 +16,7 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 # How to run
 
 > cd project
+
 > pip install
+
 > run.sh 
