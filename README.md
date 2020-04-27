@@ -13,4 +13,6 @@ Memes Crawled - ./dataset/memes
 
 # How to run
 
+Change dir to project and run script:
+
 > run.sh
