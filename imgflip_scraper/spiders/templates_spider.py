@@ -8,8 +8,9 @@ from functools import reduce
 import urllib.request
 
 
-class MemesSpider(scrapy.Spider):
-    save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
+class TemplatesSpider(scrapy.Spider):
+    # save_path = reduce(os.path.join, ['D:' + os.sep, 'Other Projects', 'memes', 'scrappy', 'imgflip_scraper'])
+    save_path = reduce(os.path.join, ['E:' + os.sep, 'schesa', 'imgflip_scraper'])
     # 'D:/Other Projects/memes/scrappy/imgflip_scraper/dataset/templates'
     name = "templates"
     memes = dict()
