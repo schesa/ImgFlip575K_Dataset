@@ -7,7 +7,7 @@ Top 100 popular memes - ./dataset/popular_100_memes.csv
 
 Memes Templates -  ./dataset/templates
 
-Memes statistics -  ./dataset/statistics.json
+Memes Statistics -  ./dataset/statistics.json
 
 Memes Crawled - ./dataset/memes
 
