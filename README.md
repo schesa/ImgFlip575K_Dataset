@@ -1,6 +1,6 @@
 # About
 
-Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)** using [Scrapy](https://docs.scrapy.org/en/latest/)
+Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)** using **[Scrapy](https://docs.scrapy.org/en/latest/)**
 
 A bigger version of **[Imgflip top 24 memes](https://www.kaggle.com/dylanwenzlau/imgflip-meme-text-samples-for-top-24-memes)**
 
@@ -12,6 +12,10 @@ Can be used with **[Imgflip API](https://api.imgflip.com/)**
 
 
 Top 100 popular memes ```./dataset/popular_100_memes.csv```
+
+- Statistics ```./dataset/statistics.json```
+
+  Nr of memes / template
 
 - Templates ```./dataset/templates```
 
@@ -27,8 +31,6 @@ Template Example
   "file_size": "24 KB"
 }
 ```
-
-- Statistics ```./dataset/statistics.json```
 
 - Memes ```./dataset/memes```
   
