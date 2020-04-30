@@ -1,4 +1,8 @@
-# About
+# Memes Dataset
+
+[About](#About) | [Memes Dataset](#memes-dataset) | [How to run](#how-to-run)
+
+## About
 
 Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)** using **[Scrapy](https://docs.scrapy.org/en/latest/)**
 
@@ -8,7 +12,7 @@ Total memes - **574701**
 
 Can be used with **[Imgflip API](https://api.imgflip.com/)**
 
-# Memes Dataset
+## Memes Dataset
 
 Top 100 popular memes ```./dataset/popular_100_memes.csv```
 
@@ -50,7 +54,7 @@ Template Example
 ```
 
 
-# How to run
+## How to run
 The dataset is already scraped in ./dataset
 
 If you need fresh memes, just do:
