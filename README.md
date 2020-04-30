@@ -10,9 +10,9 @@ Can be used with **[Imgflip API](https://api.imgflip.com/)**
 
 # Memes Dataset
 
-Top 100 popular memes ->```./dataset/popular_100_memes.csv```
+Top 100 popular memes ```./dataset/popular_100_memes.csv```
 
-Nr of memes / template -> ```./dataset/statistics.json```
+Nr of memes / template ```./dataset/statistics.json```
 
 - Templates ```./dataset/templates```
 
