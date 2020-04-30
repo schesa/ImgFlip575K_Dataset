@@ -15,6 +15,19 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 
 - Templates ```./dataset/templates```
 
+Template Example
+```javascript
+{
+  "title": "10 Guy Meme Template",
+  "template_url": "https://imgflip.com/s/meme/10-Guy.jpg",
+  "alternative_names": "Really High Guy, Stoner Stanley, Brainwashed Bob, stoned guy, ten guy, stoned buzzed high dude bro",
+  "template_id": "101440",
+  "format": "jpg",
+  "dimensions": "500x454 px",
+  "file_size": "24 KB"
+}
+```
+
 - Statistics ```./dataset/statistics.json```
 
 - Memes ```./dataset/memes```
