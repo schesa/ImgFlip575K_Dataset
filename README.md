@@ -20,6 +20,9 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 - Memes ```./dataset/memes```
 
 # How to run
+The dataset is already scraped in ./dataset
+
+If you need fresh memes, just do:
 ```sh
 $> cd project
 ```
