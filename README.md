@@ -20,7 +20,7 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 - Templates ```./dataset/templates```
 
 Template Example
-```javascript
+```yaml
 {
   "title": "10 Guy Meme Template",
   "template_url": "https://imgflip.com/s/meme/10-Guy.jpg",
@@ -35,7 +35,7 @@ Template Example
 - Memes ```./dataset/memes```
   
   Meme example:
-```javascript
+```yaml
 {
     "url": "https://i.imgflip.com/3pxtz2.jpg",
     "post": "https://imgflip.com/i/3pxtz2",
