@@ -19,7 +19,7 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 
 - Memes ```./dataset/memes```
   example:
-```json
+```javascript
 {
     "url": "https://i.imgflip.com/3pxtz2.jpg",
     "post": "https://imgflip.com/i/3pxtz2",
