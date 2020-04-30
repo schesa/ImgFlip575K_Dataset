@@ -23,8 +23,8 @@ Top 100 popular memes ```./dataset/popular_100_memes.csv```
 {
     "url": "https://i.imgflip.com/3pxtz2.jpg",
     "post": "https://imgflip.com/i/3pxtz2",
-    "metadata":
-      "views" : "1,335",
+    "metadata":{
+      "views": "1,335",
       "img-votes": "1,335",
       "title": "Yo Dawg Heard You",
       "author": "Trouble869"
