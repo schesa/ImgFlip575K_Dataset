@@ -63,12 +63,15 @@ class MemesSpider(scrapy.Spider):
         title = response.css('#img-secondary .recaption::attr(href)').extract()[0].split('/')[-1]
 
         meme = dict()
-
+        try:
+            img_votes = response.css('.img-info .img-votes::text').extract()[0].split()[0]
+        except:
+            img_votes = 0
         meme['url'] = 'https:' + response.css('#im::attr(src)').extract()[0]
         meme['post'] = response.url
         meme['metadata'] = {
             'views': response.css('.img-info .img-views::text').extract()[0].split()[0],
-            'img-votes': response.css('.img-info .img-views::text').extract()[0].split()[0],
+            'img-votes': img_votes,
             'title': response.css('#img-title::text').extract()[0],
             'author': next(iter(response.css('.img-info .u-username::text').extract() or ''), None)
         }
