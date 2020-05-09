@@ -36,11 +36,8 @@ class MemesSpider(scrapy.Spider):
                     #     'https://imgflip.com/meme/Distracted-Boyfriend',
 
     def start_requests(self):
-        i = 0
         for url in self.get_template_urls():
-            i = i + 1
-            if i > 1:
-                yield scrapy.Request(url=url, callback=self.parse)
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
         page = response.url.split("/")[-1].split('?')[0]
