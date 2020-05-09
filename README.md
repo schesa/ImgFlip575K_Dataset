@@ -8,7 +8,7 @@ Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)** using **[
 
 A bigger version of **[Imgflip top 24 memes](https://www.kaggle.com/dylanwenzlau/imgflip-meme-text-samples-for-top-24-memes)**
 
-Total memes - **574701**
+Total memes - **575948**
 
 Can be used with **[Imgflip API](https://api.imgflip.com/)**
 
@@ -37,18 +37,18 @@ Template Example
   
   Meme example:
 ```yaml
-{
-    "url": "https://i.imgflip.com/3pxtz2.jpg",
-    "post": "https://imgflip.com/i/3pxtz2",
-    "metadata":{
-      "views": "1,335",
-      "img-votes": "1,335",
-      "title": "Yo Dawg Heard You",
-      "author": "Trouble869"
+ {
+    "url": "https://i.imgflip.com/2cpxta.jpg",
+    "post": "https://imgflip.com/i/2cpxta",
+    "metadata": {
+      "views": "2,426",
+      "img-votes": "4",
+      "title": "Watch out or it'll eat you whole",
+      "author": "PLarsen985"
     },
     "boxes": [
-      "WHEN YOU'RE HAVING A BAD DAY",
-      "BUT THEN YOU FIND OUT WHO YOUR EX IS DATING NOW"
+      "I USED TO CODE WITH PYTHON",
+      "BUT I QUIT AFTER THE FIRST TIME IT BIT ME"
     ]
   }
 ```
