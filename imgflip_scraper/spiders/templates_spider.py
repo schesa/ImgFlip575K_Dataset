@@ -24,30 +24,22 @@ class TemplatesSpider(scrapy.Spider):
                 if line == 1:
                     self.log('HEADERS\n%s %s %s' % (row[0], row[1], row[2]))
                 else:
-                    # self.log('%s %s %s' % (row[0], row[1], row[2]))
                     url = 'https://imgflip.com/memetemplate/'
                     # delete punctuations
                     table = str.maketrans(dict.fromkeys(string.punctuation))
                     title = row[1].translate(table)
                     yield 'https://imgflip.com/memetemplate/' + "-".join(title.split())  # join words with -
-                    #     'https://imgflip.com/memetemplate/Distracted-Boyfriend',
+                    #  example  'https://imgflip.com/memetemplate/Distracted-Boyfriend',
 
     def start_requests(self):
         for url in self.get_template_urls():
             yield scrapy.Request(url=url, callback=self.parse)
-            # yield scrapy.Request(url=url.replace('memetemplate', 'memegenerator', 1), callback=self.parse_generator)
-
-    # TODO get list of bounding boxes from /memegenerator/
-    #  -> #mm-preview .drag-box reverse order -> style x:left y:top width, height
-    #  -> #mm-font-options .color-btn font & outline style
-    # def parse_generator(self, response):
-    #     self.log('')
 
     def parse(self, response):
         """
-            DONE Alternative names -> response.css('#mtm-subtitle::text').extract()[0], delete 'also called:'
-            DONE Template image url -> #mtm-img::attr(src)
-            DONE #mtm-info p -> template id, format, dimensions, file_size
+            Alternative names -> response.css('#mtm-subtitle::text').extract()[0], delete 'also called:'
+            Template image url -> #mtm-img::attr(src)
+            #mtm-info p -> template id, format, dimensions, file_size
             response.css('#mtm-info p::text').extract()
             ['Template ID: 112126428', 'Format: jpg', 'Dimensions: 1200x800 px', 'Filesize: 98 KB']
             [x.split(': ')[1] for x in response.css('#mtm-info p::text').extract()]
@@ -73,9 +65,6 @@ class TemplatesSpider(scrapy.Spider):
         meme['dimensions'] = mtm_info[2]
         meme['file_size'] = mtm_info[3]
         self.memes[page] = meme
-        # self.log('meme %s' % page)
-        # self.log('Created File %s' % filename)
-        # yield meme
 
     def __del__(self):
         self.save_memes()
@@ -95,7 +84,6 @@ class TemplatesSpider(scrapy.Spider):
         img_path = reduce(os.path.join, [self.save_path, "dataset", "templates", "img", url.split('/')[-1]])
         self.log(img_path)
         Path(os.path.dirname(img_path)).mkdir(mode=0o655, parents=True, exist_ok=True)
-        # self.log(meme)
         # Fix from https://stackoverflow.com/questions/34957748/http-error-403-forbidden-with-urlretrieve
         opener = urllib.request.URLopener()
         opener.addheader('User-Agent', 'meme-templates-crawler')
