@@ -6,6 +6,8 @@
 
 Scraped top 100 popular memes from **[Imgflip](https://imgflip.com/)** using **[Scrapy](https://docs.scrapy.org/en/latest/)**
 
+Used to [generate memes using AI](https://github.com/schesa/ai-memes)
+
 A bigger version of **[Imgflip top 24 memes](https://www.kaggle.com/dylanwenzlau/imgflip-meme-text-samples-for-top-24-memes)**
 
 Total memes - **575948**
