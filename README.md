@@ -1,6 +1,6 @@
-# Memes Dataset
+# ImgFlip575 Dataset
 
-[About](#About) | [Memes Dataset](#memes-dataset) | [How to run](#how-to-run)
+[About](#About) | [**Memes Dataset**](#memes-dataset) | [How to run](#how-to-run)
 
 ## About
 
