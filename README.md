@@ -1,4 +1,4 @@
-# :clown:ImgFlip575 Dataset
+# :clown_face:ImgFlip575 Dataset
 
 [About](#About) | [**Memes Dataset**](#memes-dataset) | [How to run](#how-to-run)
 
