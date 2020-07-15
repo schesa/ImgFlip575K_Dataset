@@ -2,6 +2,8 @@
 
 [About](#About) | [**Memes Dataset**](#memes-dataset) | [How to run](#how-to-run)
 
+[![HitCount](http://hits.dwyl.com/schesa/ImgFlip575K_Dataset.svg)](http://hits.dwyl.com/schesa/ImgFlip575K_Dataset)
+
 ## About
 
 Total memes - **575948**
